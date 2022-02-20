@@ -1,0 +1,95 @@
+#山东省平台正式参数
+server:
+  port: 58060
+
+spring:
+  application:
+    name: spring-cloud-gateway-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.28.29.121:8848
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            # 允许携带认证信息
+            # 允许跨域的源(网站域名/ip)，设置*为全部
+            # 允许跨域请求里的head字段，设置*为全部
+            # 允许跨域的method， 默认为GET和OPTIONS，设置*为全部
+            # 跨域允许的有效期
+            allow-credentials: true
+            allowed-origins:
+              - "http://10.28.29.121:7100"
+              - "http://10.28.29.122:7100"
+              - "http://10.28.29.123:7100"
+              - "http://15.1.48.121:7100"
+              - "http://15.1.48.122:7100"
+              - "http://15.1.48.123:7100"
+              - "http://10.28.29.121:7102"
+              - "http://10.28.29.122:7102"
+              - "http://10.28.29.123:7102"
+              - "http://15.1.48.121:7102"
+              - "http://15.1.48.122:7102"
+              - "http://15.1.48.123:7102"
+            allowed-headers: "*"
+            allowed-methods:
+              - OPTIONS
+              - GET
+              - POST
+            max-age: 3600
+            # 允许response的head信息
+            # 默认仅允许如下6个：
+            #     Cache-Control
+            #     Content-Language
+            #     Content-Type
+            #     Expires
+            #     Last-Modified
+            #     Pragma
+            #exposed-headers:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        #基础架构服务
+        - id: api-system
+          uri: lb://service-rest-gpbase
+          predicates:
+            - Path=/api/system/**
+        - id: api-plan
+          uri: lb://service-rest-gpplan
+          predicates:
+            - Path=/api/plan/**
+        - id: api-contract
+          uri: lb://service-rest-gpcontract
+          predicates:
+            - Path=/api/contract/**
+        - id: api-windows
+          uri: lb://service-rest-gpwindows
+          predicates:
+            - Path=/api/windows/**
+        - id: api-gpsiteservice
+          uri: lb://service-rest-gpsiteservice
+          predicates:
+            - Path=/api/siteservice/**
+        - id: api-gpapproval
+          uri: lb://service-rest-gpapproval
+          predicates:
+            - Path=/api/approval/**
+  cache:
+    ehcache:
+      config: classpath:/EhCache.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+myapplication:
+  token:
+    perfix: requestFromGageway
+  aes:
+    backuser:
+      key: 1234567890123456
+
