@@ -1,0 +1,16 @@
+初始化git仓库： git init 
+将修改的文件添加到暂存区：git add file
+用暂存区的文件覆盖工作区：git checkout -- file
+将暂存区的文件提交到仓库：git commit -m ""
+用仓库的文件覆盖暂存区：git reset HEAD file
+git diff:如果暂存区有文件，则比较暂存区和工作区，否则比较仓库和工作区。
+git diff --cached:比较暂存区和仓库。
+git diff HEAD: 比较工作区和仓库
+git status:查看git diff pv8
+
+git log:查看日志
+git reflog:查看操作日志。
+回滚：
+git reset --hard HEAD^  回滚到上一个版本
+git reset --hard HEAD^^ 回滚到上上一个版本
+git reset --hard 版本id 回滚到指定版本
