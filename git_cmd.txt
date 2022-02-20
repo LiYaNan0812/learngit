@@ -14,3 +14,9 @@ git reflog:查看操作日志。
 git reset --hard HEAD^  回滚到上一个版本
 git reset --hard HEAD^^ 回滚到上上一个版本
 git reset --hard 版本id 回滚到指定版本
+
+git checkout -- file
+1、如果没有添加到暂存区：则用版本库还原工作区。
+2、如果已添加到暂存区且工作区做出了修改，则用暂存区还原工作区。
+3、如果已添加到暂存区，但是没作出修改，想退回到上一个版本，怎么搞？
+针对第三种情况，此时可以使用命令git reset HEAD file取消提交到暂存区的操作，然后就回到了情况1.
