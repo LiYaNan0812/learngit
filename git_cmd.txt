@@ -25,3 +25,6 @@ git checkout -- file
 git remote add orign git@github.com:LiYaNan0812/learngit.git
 git branch -M main   修改本地仓库分支名为main
 git push orign -u main  将本地仓库推送到远程仓库。后续推送省略参数-u
+
+创建并切换分支
+git checkout -b dev
