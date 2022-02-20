@@ -20,3 +20,8 @@ git checkout -- file
 2、如果已添加到暂存区且工作区做出了修改，则用暂存区还原工作区。
 3、如果已添加到暂存区，但是没作出修改，想退回到上一个版本，怎么搞？
 针对第三种情况，此时可以使用命令git reset HEAD file取消提交到暂存区的操作，然后就回到了情况1.
+
+将本地关联到github仓库：
+git remote add orign git@github.com:LiYaNan0812/learngit.git
+git branch -M main   修改本地仓库分支名为main
+git push orign -u main  将本地仓库推送到远程仓库。后续推送省略参数-u
