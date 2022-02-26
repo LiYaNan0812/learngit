@@ -35,3 +35,10 @@ git checkout dev 切换到dev分支
 合并指定分支到当前分支
 切换分支到main分支 git checkout main
 合并：git merge dev
+
+删除分支：（当分支上的工作完成后，可以删除分支）
+git branch -d dev
+
+创建并切换分支的另一种方式
+git switch -c dev
+切换分支： git switch main 
