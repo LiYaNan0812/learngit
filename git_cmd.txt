@@ -28,6 +28,9 @@ git push orign -u main  将本地仓库推送到远程仓库。后续推送省�
 
 创建并切换分支
 git checkout -b dev
+等于
+git branch dev  创建dev分支
+git checkout dev 切换到dev分支
 
 合并指定分支到当前分支
 切换分支到main分支 git checkout main
