@@ -47,3 +47,5 @@ git switch -c dev
 
 Bug分支：
 git stash  保存现场。
+
+假装修复了一个bug.
