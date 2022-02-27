@@ -11,3 +11,5 @@ git stash apply  恢复但不删除
 git stash drop  删除stash
 git stash pop 恢复并删除
 git cherry-pick 版本号   复制一个特定的提交到当前分支。
+
+111111111111111111111111111
