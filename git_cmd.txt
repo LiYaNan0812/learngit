@@ -41,4 +41,4 @@ git branch -d dev
 
 创建并切换分支的另一种方式
 git switch -c dev
-切换分支： git switch main 33333333
+切换分支： git switch main
