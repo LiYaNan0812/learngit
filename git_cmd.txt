@@ -46,7 +46,7 @@ git switch -c dev
 分支管理:
 
 Bug分支：
-git stash  保存现场。
+git stash  保存现场。aaa
 
 假装修复了一个bug.
 
