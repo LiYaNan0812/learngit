@@ -49,3 +49,5 @@ Bug分支：
 git stash  保存现场。aaa
 
 假装修复了一个bug.
+
+测试--no-ff是否记录日志
