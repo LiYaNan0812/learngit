@@ -46,15 +46,23 @@ git switch -c dev
 分支管理:
 
 Bug分支：
-git stash  保存现场。aaa
+git stash  保存现场。
+git stash list 查看存档。
+git stash apply 恢复存档
+git stash drop 删除存档
+git stash pop 恢复并删除存档。
+git cherry-pick <commit> 将指定提交的修改复制到当前分支，避免重复劳动。
 
 假装修复了一个bug.
 
 测试--no-ff是否记录日志
 这个是使用no-ff
+git merge --no-ff -m "merge with --no-ff" dev
 
-github修改
-
-测试用dev分支提交到远程
-
-测试在dev分支提交到远程main分支，测试修复bug.
+指定本地dev分支与远程origin/dev分支的链接
+git branch --set-upstream-to=origin/dev dev.
+多人协作的工作模式：
+1,使用git push origin <branch-name>推送修改。
+2,如果推送失败，则远程分支比本地分支新，需要先git pull试图合并。
+3，如果合并有冲突，需要解决，并在本地提交。
+4，没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送
