@@ -93,3 +93,5 @@ fork命令，可以将别人的仓库复制到自己的仓库，自己可以对�
 
 git config --global alias.unstage 'reset HEAD'  给'reset HEAD'定义一个别名 unstage  。
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"    。
+
+使用soreceTree 图形化界面。
