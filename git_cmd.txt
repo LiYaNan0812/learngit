@@ -85,3 +85,11 @@ git push origin --tags  向远程推送所有未推送的标签
 git tag -d <tagname> 删除一个本地标签
 git push origin :refs/tags/<tagname> 删除一个远程标签
 
+
+fork命令，可以将别人的仓库复制到自己的仓库，自己可以对自己的仓库进行读写操作。
+修改完成后，可以创建一个pull request给源仓库。
+
+可以在本地仓库根目录简历.gitignore文件，可以在里面写上不提交git管理的文件规则。
+
+git config --global alias.unstage 'reset HEAD'  给'reset HEAD'定义一个别名 unstage  。
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"    。
