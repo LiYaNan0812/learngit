@@ -61,3 +61,6 @@ github修改
 
 测试bug分支，当前是dev分支做出的修改。
 
+git rebase理解
+git rebase可以将两个分支的提交合并到一条时间线上。
+
