@@ -3,7 +3,8 @@
 用暂存区的文件覆盖工作区：git checkout -- file
 将暂存区的文件提交到仓库：git commit -m ""
 用仓库的文件覆盖暂存区：git reset HEAD file
-git diff:如果暂存区有文件，则比较暂存区和工作区，否则比较仓库和工作区。
+git diff:如果暂存区有文件，则比较暂存区和工作区，否则比较仓库和工作区。实际上比较的一直都是暂存区和工作区。
+因为如果没有add到暂存区，那暂存区和仓库就是一致的。hello
 git diff --cached:比较暂存区和仓库。
 git diff HEAD: 比较工作区和仓库
 git status:查看git diff pv8
@@ -15,11 +16,11 @@ git reset --hard HEAD^  回滚到上一个版本
 git reset --hard HEAD^^ 回滚到上上一个版本
 git reset --hard 版本id 回滚到指定版本
 
-git checkout -- file
-1、如果没有添加到暂存区：则用版本库还原工作区。
+git checkout -- file  =新版本命令： git restore file
+1、如果没有添加到暂存区：则用版本库还原工作区。	
 2、如果已添加到暂存区且工作区做出了修改，则用暂存区还原工作区。
 3、如果已添加到暂存区，但是没作出修改，想退回到上一个版本，怎么搞？
-针对第三种情况，此时可以使用命令git reset HEAD file取消提交到暂存区的操作，然后就回到了情况1.
+针对第三种情况，此时可以使用命令git reset HEAD file取消提交到暂存区的操作，然后就回到了情况1.（git restore --staged file)
 
 将本地关联到github仓库：
 git remote add orign git@github.com:LiYaNan0812/learngit.git
@@ -67,6 +68,11 @@ git branch --set-upstream-to=origin/dev dev.
 2,如果推送失败，则远程分支比本地分支新，需要先git pull试图合并。
 3，如果合并有冲突，需要解决，并在本地提交。
 4，没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送
+
+如何获取远程仓库指定分支？
+1、git clone -b dev url  克隆仓库的时候直接克隆dev分支
+2、git fetch origin dev 抓取origin远程仓库的dev分支，如不指定分支名，则获取所有分支
+3、git checkout -b dev origin/dev 从origin远程仓库dev分支创建本地dev分支
 
 
 git rebase理解
