@@ -39,6 +39,10 @@ git checkout dev 切换到dev分支
 
 删除分支：（当分支上的工作完成后，可以删除分支）
 git branch -d dev
+删除远程分支及追踪分支
+git push origin --delete dev
+删除追踪分支（不会真正删除远程分支）
+git branch -d --remotes origin/dev
 
 创建并切换分支的另一种方式
 git switch -c dev
